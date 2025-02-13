@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club9 - Betting Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div id="login-page">
+        <h2>Welcome to Club9</h2>
+        <input type="text" id="phone" placeholder="Enter Phone Number">
+        <button onclick="sendOTP()">Send OTP</button>
+        <input type="text" id="otp" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <!-- Betting Page -->
+    <div id="betting-page" style="display:none;">
+        <h2>Club9 - Place Your Bet</h2>
+
+        <div id="wallet">Wallet Balance: ₹<span id="balance">100</span></div>
+
+        <div id="timer">Betting closes in: <span id="countdown">5</span>s</div>
+
+        <div id="winning-number">Last Winning Number: -</div>
+
+        <div id="number-selection">
+            <p>Select a number (0-9):</p>
+            <div class="number-grid">
+                <button onclick="selectNumber(0)">0</button>
+                <button onclick="selectNumber(1)">1</button>
+                <button onclick="selectNumber(2)">2</button>
+                <button onclick="selectNumber(3)">3</button>
+                <button onclick="selectNumber(4)">4</button>
+                <button onclick="selectNumber(5)">5</button>
+                <button onclick="selectNumber(6)">6</button>
+                <button onclick="selectNumber(7)">7</button>
+                <button onclick="selectNumber(8)">8</button>
+                <button onclick="selectNumber(9)">9</button>
+            </div>
+        </div>
+
+        <input type="number" id="bet-amount" placeholder="Enter Bet Amount">
+        <button id="bet-button" onclick="placeBet()">Place Bet</button>
+
+        <h3>Last Results</h3>
+        <table id="results-table">
+            <tr>
+                <th>Serial No</th>
+                <th>Number</th>
+                <th>Result</th>
+            </tr>
+        </table>
+
+        <div id="popup" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
